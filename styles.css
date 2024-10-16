@@ -1,7 +1,8 @@
 /* General Body and App Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f5f7;
+    background-color: #24292d;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -16,6 +17,7 @@ body {
     max-width: 1200px;
 }
 
+/* Controls Styling */
 .controls {
     display: flex;
     gap: 10px;
@@ -23,24 +25,35 @@ body {
 }
 
 #list-name {
-    padding: 8px;
-    width: 200px;
-    border: 1px solid #dcdcdc;
-    border-radius: 4px;
+    padding: 12px;
+    width: 300px;
+    border: 1px solid #444c56;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #2b3137;
+    color: #ffffff;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+#list-name:focus {
+    border: 1px solid #0d74e7;
+    box-shadow: 0 0 5px rgba(13, 116, 231, 0.5);
+    outline: none;
 }
 
 button {
-    padding: 8px 12px;
-    background-color: #0079bf;
+    padding: 10px 15px;
+    background-color: #2fbb4f;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #026aa7;
+    background-color: #0d74e7;
 }
 
 /* Board and List Styling */
@@ -53,23 +66,31 @@ button:hover {
 }
 
 .list {
-    background-color: #ebecf0;
+    background-color: #2b3137;
     border-radius: 8px;
     padding: 8px;
-    width: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+    border: 2px solid #2fbb4f;
+}
+
+.list:hover {
+    transform: translateY(-3px);
+    border: 2px solid #0d74e7;
 }
 
 .list h3 {
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     padding: 10px;
     margin: 0;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid #2b3137;
 }
 
+/* Card Container Styling */
 .card-container {
     display: flex;
     flex-direction: column;
@@ -80,47 +101,88 @@ button:hover {
 
 /* Card Styling */
 .card {
-    background-color: #ffffff;
-    border-radius: 4px;
-    padding: 10px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: #26282a;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    transition: box-shadow 0.2s ease-in-out;
+    color: #ffffff;
+    border: 2px solid #2fbb4f;
 }
 
 .card:hover {
-    background-color: #f0f0f0;
+    background-color: #2d2f31;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #0d74e7;
 }
 
 .remove-btn {
     background-color: #e53935;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 12px;
     padding: 4px 8px;
+    transition: background-color 0.3s;
 }
 
 .remove-btn:hover {
-    background-color: #d32f2f;
+    background-color: #c62828;
 }
 
 /* List Button Styling */
 .list button {
-    background-color: #5aac44;
+    background-color: #2fbb4f;
     color: white;
     padding: 8px 12px;
     font-size: 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     margin-top: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .list button:hover {
-    background-color: #519839;
+    background-color: #0d74e7;
+}
+
+/* Hints Styling */
+.hints {
+    background-color: #2b3137;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    color: #ffffff;
+    border: 1px solid #444c56;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.hints p {
+    margin: 0 0 5px 0;
+}
+
+.hints ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hints ul li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.hints ul li:before {
+    content: "•";
+    color: #2fbb4f;
+    position: absolute;
+    left: 0;
 }

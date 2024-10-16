@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Task Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div id="app">
         <div class="controls">
@@ -15,8 +13,15 @@
             <button onclick="addList()">Add List</button>
         </div>
         <div id="board" class="board"></div>
+        <div class="hints">
+            <p><strong>Hints:</strong></p>
+            <ul>
+                <li>Click on list or card names to edit them.</li>
+                <li>Double-click on a card to edit its content.</li>
+                <li>Drag and drop cards to rearrange them within and between lists.</li>
+            </ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
